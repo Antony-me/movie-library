@@ -15,9 +15,12 @@ def movies(request):
     movie_list = get_onlinemovies('trending')
     movies= movie_list['results']
 
+    youtube_search = get_youtube_search()
+    youtube_searched_movie=youtube_search['items']
+
     title = 'Home - Welcome'
 
-    return render(request, 'All_movies/movies.html', {'movies':movies, 'title' : title })
+    return render(request, 'All_movies/movies.html', {'movies':movies, 'trailers':youtube_searched_movie, 'title' : title })
 
 
 #view function for desplaying genre-list movies
@@ -49,10 +52,11 @@ def searched_movie(request):
 
 
 #view function for desplaying youtube trailers
+
 def youtube_search(request):
 
     '''
-    View root page function that returns the index page and its data
+    View root page function that returns youtube  data
     '''
     youtube_search = get_youtube_search()
     youtube_searched_movie= youtube_search['items']

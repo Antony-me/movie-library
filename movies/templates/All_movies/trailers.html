@@ -1,16 +1,7 @@
 {%extends 'All_movies/base.html'%}
-
 {% block content %}
-
 {% for movie in movies %}
-
-
-<iframe width="1685" height="800"
-<iframe width="420" height="345" src="http://www.youtube.com/embed/{{movie.id.videoId}}?autoplay=1" frameborder="0" allowfullscreen></iframe>
-src="https://www.youtube.com/embed/?autoplay=1">
+<iframe width="1685" height="760"src="http://www.youtube.com/embed/{{movie.id.videoId}}?autoplay=1?autoplay=1"frameborder="0"allowfullscreen></iframe>
 </iframe>
-
 {% endfor %}
-
-
 {% endblock %}
