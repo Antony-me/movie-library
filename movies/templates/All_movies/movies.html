@@ -4,11 +4,14 @@
 
 {% for movie in movies %}
 
-
-<p>{{ movie.title }}</p>
-<img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}" alt="poster">
-
-
+<div class="jumbotron-fluid">
+    <div class="col-sm-4 movie-card">
+        <a href="{% url 'description' %}"><img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}" alt="poster" class="responsive"></a>
+        
+        <h4 class="text-center"> {{ movie.title }}</h4>
+        <p>{{ movie.overview }}</p>
+    </div>
+</div>
 
 {% endfor %}
 

@@ -5,8 +5,14 @@
 {% for movie in movies %}
 
 
-<p>{{ movie.title }}</p>
-<img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}" alt="poster">
+<h3>{{ movie.title }}</h3> 
+<div class="jumbotron-fluid">
+    <div class="col-sm-4 movie-card">
+        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path}}" alt="poster">
+        <p>{{ movie.overview }}</p>
+        <a href="{% url 'youtube_search' %}">Watch Trailer</a>
+    </div>
+</div>
 
 
 

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Movie(models.Model):
-    movie_title = models.CharField(max_length=70)
+    movie_movie_title = models.CharField(max_length=70)
     movie_poster_url = models.CharField( max_length= 200)
     movie_overview = models.CharField( max_length= 200)
   
@@ -12,7 +12,7 @@ class Movie(models.Model):
         return all_movies
 
     def __str__(self):
-        return self.title
+        return self.movie_title
 
     def save_movie(self):
         self.save()
@@ -28,8 +28,8 @@ class Movies:
     '''
     def __init__(self,id,movie_title,movie_overview,movie_poster):
         self.id =id
-        self.movie_title = title
-        self.movie_overview = overview
+        self.movie_title = movie_title
+        self.movie_overview = movie_overview
         self.movie_poster_url = "https://image.tmdb.org/t/p/w500/" + poster
 
 
